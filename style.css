@@ -1,0 +1,89 @@
+:root {
+    --purple: #6a11cb;
+    --blue: #2575fc;
+    --dark: #0b0e14;
+    --card: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--dark); color: #fff; position: relative; overflow-x: hidden; }
+
+/* Animated Background (Ripple Effect) */
+.bg-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+    background: radial-gradient(circle at 10% 20%, #1e293b 0%, #0b0e14 100%);
+}
+.bg-overlay::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1920&q=80') center/cover;
+    opacity: 0.1; /* Heavy background effect */
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--card); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Header & Logo */
+.top-nav {
+    padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid var(--purple);
+}
+.brand-logo { width: 65px; height: 65px; border-radius: 50%; filter: drop-shadow(0 0 8px var(--blue)); border: 2px solid white; }
+.brand-info h1 { font-size: 20px; background: linear-gradient(to right, #fff, var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Search Bar */
+.search-wrapper { max-width: 900px; margin: 25px auto; padding: 0 20px; }
+.search-inner { padding: 12px; border-radius: 8px; display: flex; align-items: center; }
+.search-inner input { background: none; border: none; color: white; width: 100%; outline: none; margin-left: 10px; }
+.search-inner i { color: var(--blue); animation: pulse 2s infinite; }
+
+/* Form Design */
+.form-container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+.form-card { padding: 25px; border-radius: 12px; border-left: 5px solid var(--purple); }
+.grid-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 15px; }
+.input-group label { display: block; font-size: 12px; color: #8b949e; margin-bottom: 5px; }
+.input-group input, select { width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; border-radius: 6px; color: white; outline: none; }
+
+/* Ripple Button Effect */
+.main-action-btn {
+    width: 100%; margin-top: 20px; padding: 15px; background: linear-gradient(45deg, var(--purple), var(--blue));
+    border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s;
+    position: relative; overflow: hidden;
+}
+.main-action-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px var(--blue); }
+
+/* HISTORY Section */
+.history-section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+.history-title { border-bottom: 2px solid var(--blue); padding-bottom: 10px; margin-bottom: 20px; color: var(--blue); }
+.table-card { border-radius: 12px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; }
+th { background: rgba(0,0,0,0.5); padding: 15px; text-align: left; color: #8b949e; font-size: 12px; }
+td { padding: 15px; border-bottom: 1px solid #30363d; background: rgba(22, 27, 34, 0.6); }
+
+/* Edit/Delete Icons with Glow */
+.btn-edit { color: #4479b7; background: none; border: none; cursor: pointer; font-size: 18px; margin-right: 15px; text-shadow: 0 0 5px #58a6ff; }
+.btn-del { color: #8d0f09; background: none; border: none; cursor: pointer; font-size: 18px; text-shadow: 0 0 5px #f85149; }
+
+/* Keyframes for animations */
+@keyframes pulse { from { text-shadow: 0 0 2px var(--blue); } to { text-shadow: 0 0 10px var(--blue); } }
+
+@media (max-width: 768px) {
+    .top-nav { flex-direction: column; gap: 10px; text-align: center; }
+    .hero-text h1 { font-size: 1.8rem; }
+}
+/* Jab search active ho to ye class apply hogi */
+.search-active {
+    border: 2px solid #00f2fe !important; /* Neon Blue Border */
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Input field ka default style thoda behtar */
+.search-inner {
+    transition: all 0.3s ease;
+    border: 1px solid var(--purple);
+}

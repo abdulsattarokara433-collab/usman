@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasani Pro Ledger | Imran Gujjer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <div class="app-container">
+        <header class="top-nav glass-card">
+            <div class="logo-section">
+                <div class="logo-wrap">
+                    <img src="123.jpg" alt="LM Logo" class="brand-logo">
+                </div>
+                <div class="brand-info">
+                    <h1>LASANI MOBILE</h1>
+                    <span>GUJJAR INSTALLMENT</span>
+                </div>
+            </div>
+            <div class="user-profile">
+                <span>Admin: Imran Gujjer</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="search-wrapper">
+                <div class="search-inner glass-card">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchBar" onkeyup="searchCustomer()" placeholder="Naam ya phone se talash karein...">
+                </div>
+            </div>
+
+            <section class="form-container">
+                <div class="form-card glass-card">
+                    <h3><i class="fas fa-plus-square"></i> Naya Record Darj Karein</h3>
+                    <div class="grid-form">
+                        <input type="hidden" id="editIndex">
+                        <div class="input-group">
+                            <label>Customer Naam</label>
+                            <input type="text" id="custName" placeholder="Naam Likhein">
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="custPhone" placeholder="Phone Number">
+                        </div>
+                        <div class="input-group">
+                            <label>Amount (Rs)</label>
+                            <input type="number" id="custAmount" placeholder="Raqam">
+                        </div>
+                        <div class="input-group">
+                            <label>Status</label>
+                            <select id="entryType">
+                                <option value="lena">Lene Hain (Receivable)</option>
+                                <option value="dena">Dene Hain (Payable)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="saveData()" id="saveBtn" class="main-action-btn ripple">
+                        <i class="fas fa-save"></i> DATA SAVE KAREIN
+                    </button>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <h2 class="history-title">HISTORY</h2>
+                <div class="table-card glass-card">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>CUSTOMER</th>
+                                <th>AMOUNT</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customerList">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
